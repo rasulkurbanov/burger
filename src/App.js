@@ -1,6 +1,7 @@
+import React, { useState } from 'react'
 import './App.css';
 import Person from './Person/Person'
-import React, { useState } from 'react'
+import ValidationComponent from './ValidationComponent/ValidationComponent'
 
 function App() {
 
@@ -41,7 +42,8 @@ function App() {
           })
         }
         <input type="text" onChange={outputHandler}/>
-        <p>{output}</p>
+
+        <ValidationComponent output={output}/>
       </header>
     </div>
   );
