@@ -10,11 +10,19 @@ function App() {
     {id: 3, name: "Tima", age: 23 },
   ])
 
+  const [output, setOutput] = useState(0)
+
 
   function deletePersonHandler(personIndex) {
     persons.splice(personIndex, 1)
     setPersons(persons)
   }
+
+  function outputHandler(e) {
+    let len = e.target.value
+    setOutput(len.length)
+  }
+
 
   return (
     <div className="App">
@@ -32,7 +40,8 @@ function App() {
             )
           })
         }
-
+        <input type="text" onChange={outputHandler}/>
+        <p>{output}</p>
       </header>
     </div>
   );
